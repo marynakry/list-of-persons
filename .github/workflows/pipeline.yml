@@ -1,7 +1,7 @@
 name: CI
 on: push
 jobs:
-  build:
+  linter:
     runs-on: ubuntu-latest
     steps:
     - name: Check out repository code
@@ -9,4 +9,13 @@ jobs:
     - name: Install modules
       run: yarn
     - name: Run ESLint
-      run: eslint . --ext .js,.jsx,.ts,.tsx
+      run: yarn run eslint . --ext .js,.jsx,.ts,.tsx
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check out repository code
+      uses: actions/checkout@v3
+    - name: Install modules
+      run: yarn
+    - name: Run ESLint
+      run: yarn test

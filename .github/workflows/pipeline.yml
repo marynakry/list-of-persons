@@ -1,4 +1,4 @@
-name: Tests andlinter
+name: Tests and linter
 on: push
 jobs:
   linter:
@@ -9,8 +9,7 @@ jobs:
     - name: 📦 Install modules
       run: yarn
     - name: 🚀 Run ESLint
-      run: yarn run eslint . --ext .js,.jsx,.ts,.tsx
-    - run: echo "🎉 Success"
+      run: yarn run eslint . --ext .ts,.tsx
   tests:
     runs-on: ubuntu-latest
     steps:
@@ -20,4 +19,3 @@ jobs:
       run: yarn
     - name: 🚀 Run Tests
       run: yarn test
-    - run: echo "🎉 Success"

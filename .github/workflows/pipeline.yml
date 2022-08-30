@@ -1,21 +1,23 @@
-name: CI
+name: Tests andlinter
 on: push
 jobs:
   linter:
     runs-on: ubuntu-latest
     steps:
-    - name: Check out repository code
+    - name: 📥 Check out repository code
       uses: actions/checkout@v3
-    - name: Install modules
+    - name: 📦 Install modules
       run: yarn
-    - name: Run ESLint
+    - name: 🚀 Run ESLint
       run: yarn run eslint . --ext .js,.jsx,.ts,.tsx
+    - run: echo "🎉 Success"
   tests:
     runs-on: ubuntu-latest
     steps:
-    - name: Check out repository code
+    - name: 📥 Check out repository code
       uses: actions/checkout@v3
-    - name: Install modules
+    - name: 📦 Install modules
       run: yarn
-    - name: Run ESLint
+    - name: 🚀 Run Tests
       run: yarn test
+    - run: echo "🎉 Success"
